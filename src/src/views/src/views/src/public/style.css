@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #222;
+}
+
+.site-header, .site-footer {
+  padding: 16px 20px;
+  background: #f3f3f3;
+}
+
+.container {
+  padding: 20px;
+}
+
+.tagline { margin-top: 4px; color: #555; }
+
+nav a { text-decoration: none; margin-right: 10px; }
+
+.muted { color: #666; }
+
+.listings { padding-left: 18px; }
+
+.badge {
+  margin-left: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e8e8e8;
+  font-size: 12px;
+}
