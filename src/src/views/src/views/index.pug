@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2 Welcome
+  p CampusCycle helps students share resources and build community.
+
+  if listings && listings.length
+    h3 Latest listings
+    ul.listings
+      each item in listings
+        li
+          strong= item.title
+          if item.category
+            span.badge= item.category
+  else
+    p.muted No listings found yet (or database still starting).
