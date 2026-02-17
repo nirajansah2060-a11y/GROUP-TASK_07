@@ -14,7 +14,7 @@
 |------|------------|------|
 | Member 1 Aashish Gupta | A00016277 | Backend Developer |
 | Member 2 Pradip Oli | A00027993 | Frontend Developer |
-| Member 4 Nirajan Sah Teli | A00031797 | DevOps & Database |
+| Member 3 Nirajan Sah Teli | A00031797 | DevOps & Database |
 
 (All members contribute to version control via GitHub.)
 
