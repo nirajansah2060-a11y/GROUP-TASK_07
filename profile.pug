@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  if user
+    h2= user.name
+    p Email: #{user.email}
+
+    h3 Listings
+    if items.length
+      ul
+        each item in items
+          li= item.title
+    else
+      p No listings.
+  else
+    p User not found.
