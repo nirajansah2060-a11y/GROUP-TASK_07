@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h2 Items
+  if items.length
+    ul
+      each item in items
+        li
+          strong= item.title
+          |  - #{item.category}
+  else
+    p No items available.
