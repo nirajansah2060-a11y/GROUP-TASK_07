@@ -1,0 +1,61 @@
+require("dotenv").config();
+const express = require("express");
+const path = require("path");
+const db = require("./db");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "../views"));
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "../public")));
+
+/* HOME - ITEMS LIST */
+app.get("/", async (req, res) => {
+  const [items] = await db.query("SELECT * FROM items ORDER BY id DESC");
+  res.render("index", { items });
+});
+
+/* ITEM DETAIL */
+app.get("/items/:id", async (req, res) => {
+  const [rows] = await db.query("SELECT * FROM items WHERE id = ?", [req.params.id]);
+  res.render("item-detail", { item: rows[0] });
+});
+
+/* USERS LIST */
+app.get("/users", async (req, res) => {
+  const [users] = await db.query("SELECT id, name FROM users");
+  res.render("users", { users });
+});
+
+/* USER PROFILE */
+app.get("/users/:id", async (req, res) => {
+  const [user] = await db.query("SELECT * FROM users WHERE id = ?", [req.params.id]);
+  const [items] = await db.query("SELECT * FROM items WHERE user_id = ?", [req.params.id]);
+  res.render("profile", { user: user[0], items });
+});
+
+/* TAGS LIST */
+app.get("/tags", async (req, res) => {
+  const [tags] = await db.query("SELECT * FROM tags");
+  res.render("tags", { tags });
+});
+
+/* ITEMS BY TAG */
+app.get("/tags/:id/items", async (req, res) => {
+  const [items] = await db.query(`
+    SELECT items.*
+    FROM items
+    JOIN item_tags ON items.id = item_tags.item_id
+    WHERE item_tags.tag_id = ?
+  `, [req.params.id]);
+
+  res.render("index", { items });
+});
+
+app.listen(PORT, () => {
+  console.log(`CampusCycle running at http://localhost:${PORT}`);
+});
