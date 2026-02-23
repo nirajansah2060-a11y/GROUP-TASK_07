@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  if item
+    h2= item.title
+    img(src="/images/book.jpg")
+    p= item.description
+    button Swap Request (Demo)
+  else
+    p Item not found.
