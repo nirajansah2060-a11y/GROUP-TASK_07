@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 Available Items
+  if items.length
+    each item in items
+      .item-card
+        img(src="/images/book.jpg")
+        h3
+          a(href=`/items/${item.id}`)= item.title
+        p= item.description
+  else
+    p No items available.
