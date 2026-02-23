@@ -1,0 +1,22 @@
+# Stand-up Meeting – 23 Feb 2026
+Project: CampusCycle
+Sprint: 2 → 3 Transition
+
+## Attendees
+- aashish gupta
+- nirahan sah teli
+- pradip oli
+
+## What Was Done
+- Updated app.js routing
+- Added tag seed file
+- Improved UI with image thumbnails
+- Updated database schema
+
+## Next Tasks
+- Implement /items/:id
+- Implement /tags route
+- Connect swap request button (UI demo)
+
+## Blockers
+- None
