@@ -1,0 +1,8 @@
+INSERT INTO tags (name) VALUES
+('Textbook'),
+('Electronics'),
+('Kitchen'),
+('Tools'),
+('Notes'),
+('Study Equipment')
+ON DUPLICATE KEY UPDATE name=name;
