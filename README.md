@@ -8,7 +8,7 @@
 
 ---
 
-## 👥 Group Members – Brothers
+##  Group Members – Brothers
 
 | Name | Student ID | Role |
 |------|------------|------|
@@ -20,7 +20,7 @@
 
 ---
 
-##  Overview
+#  Overview
 
 CampusCycle is a full-stack web application designed to support sharing and exchange within the university community.
 
